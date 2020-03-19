@@ -2,6 +2,7 @@ import React from 'react';
 import User from '../Layout/User/User';
 import Home from '../Layout/Home/Home';
 import Login from '../Layout/Login/Login';
+import Event from '../Layout/Event/Event'
 import {
     Switch,
     Route,
@@ -17,10 +18,13 @@ function MainRoute(){
             <Route exact path="/home">
                 <Home />
             </Route>
-            <Router>
+            <Router path="/events">
+                <Event />
+            </Router>
+            <Router path="/profile">
                 <User />
             </Router>
-            <Router></Router>
+            
         </Switch>
     )
 }

@@ -11,15 +11,15 @@ export default class NavBar extends React.Component {
         } else 
         this.setState({login : false})
     }
-    componentWillMount(){
-        if(Auth.isUserAuthenticated()){
-            this.setState({login : true})
-        } else 
-        this.setState({login : false})
-    }
     handleLogout(){
         Auth.deauthenticateUser();
         this.setState({login : false})
+    }
+    isLinkActive(path){
+        if(window.location.pathname === path)
+            return "nav-item active"
+        else 
+            return "new-item"
     }
     renderIsLogin(){
         if(!this.state.login)
@@ -28,7 +28,7 @@ export default class NavBar extends React.Component {
                 <Link to={{
                     pathname : '/login',
                     state : {
-                        prev : window.location.pathname
+                        prev : window.location.pathname,
                     }}
                 }><span className="dropdown-item">Login</span></Link>
                 <Link to={{
@@ -47,7 +47,7 @@ export default class NavBar extends React.Component {
                 <a className="dropdown-item" href="/profile/event/ticket">Create Event</a>
                 <a className="dropdown-item" href="/profile/event/manage">My Events </a>
                 <div className="dropdown-divider"></div>
-                <span className="dropdown-item" onClick={()=>this.handleLogout()} style={{color : "red"}}>Logout</span>
+                <span className="dropdown-item" onClick={this.handleLogout()} style={{color : "red"}}>Logout</span>
             </React.Fragment>
         )
     }
@@ -61,16 +61,16 @@ export default class NavBar extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
+                        <li className={this.isLinkActive('/home')}>
                             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item">
+                        <li className={this.isLinkActive('/contact-us')}>
                             <a className="nav-link" href="/contact-us">Contact us</a>
                         </li>
-                        <li className="nav-item">
+                        <li className={this.isLinkActive('/events')}>
                             <a className="nav-link" href="/events">Discover Event</a>
                         </li>
-                        <li className="nav-item">
+                        <li className={this.isLinkActive('/profile/event/create')}>
                             <a className="nav-link" href="/profile/event/create"><button className="post-btn">Post Event</button></a>
                         </li>
                         <li className="nav-item dropdown dropleft">

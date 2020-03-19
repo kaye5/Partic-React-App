@@ -13,8 +13,8 @@ function UserRoute(){
             <Route exact path="/events">
                 <Events />
             </Route>
-            <Route exact path="/events/:id" component={()=>{<Detail {...props}/>}}/>
-            <Route exact path="/events/:id/payment" component={()=>{<Payment {...props}/>}}/>
+            <Route exact path="/events/:id" component={(props)=>(<Detail {...props}/>)}/>
+            <Route exact path="/events/:id/payment" component={(props)=>(<Payment {...props}/>)}/>
         </Switch>
     )
 }

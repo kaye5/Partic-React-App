@@ -3,6 +3,7 @@ import mainPic from '../../Asset/img/homehead.png'
 import secPic from '../../Asset/img/homebot.png'
 import './Home.css'
 import {eventData}from '../../dataTest/event.js'
+import { Link } from 'react-router-dom';
 export default  class Home extends React.Component{
     constructor(props){
         super(props)
@@ -46,7 +47,7 @@ export default  class Home extends React.Component{
                             <p className="main-q">#Partyforlife</p>
                         </div>
                         <div className="row partic-yellow-t">
-                            <button className="btn partic-yellow-bg partic-btn">Discover More</button>
+                            <Link to="/events"><button className="btn partic-yellow-bg partic-btn">Discover More</button></Link>
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-12 col-lg-6">
