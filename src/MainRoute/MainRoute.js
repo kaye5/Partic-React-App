@@ -2,6 +2,7 @@ import React from 'react';
 import User from '../Layout/User/User';
 import Home from '../Layout/Home/Home';
 import Login from '../Layout/Login/Login';
+import Logout from '../Layout/Login/Logout';
 import Event from '../Layout/Event/Event'
 import {
     Switch,
@@ -15,6 +16,7 @@ function MainRoute(){
         <Switch>
             <Route exact path="/" component={()=><Redirect to="/home"/>}/>
             <Route path="/login" component={(props)=><Login {...props}/>} />
+            <Route path="/logout" component={() => <Logout />} />
             <Route exact path="/home">
                 <Home />
             </Route>

@@ -11,10 +11,7 @@ export default class NavBar extends React.Component {
         } else 
         this.setState({login : false})
     }
-    handleLogout(){
-        Auth.deauthenticateUser();
-        this.setState({login : false})
-    }
+    
     isLinkActive(path){
         if(window.location.pathname === path)
             return "nav-item active"
@@ -47,7 +44,7 @@ export default class NavBar extends React.Component {
                 <a className="dropdown-item" href="/profile/event/ticket">Create Event</a>
                 <a className="dropdown-item" href="/profile/event/manage">My Events </a>
                 <div className="dropdown-divider"></div>
-                <span className="dropdown-item" onClick={this.handleLogout()} style={{color : "red"}}>Logout</span>
+                <a className="dropdown-item" href="/logout" style={{color : "red"}}>Logout</a>
             </React.Fragment>
         )
     }
