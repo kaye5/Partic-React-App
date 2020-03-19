@@ -1,0 +1,49 @@
+.App{
+  position: relative;
+  min-height: 100vh;
+}
+a{
+  color: white;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.post-btn{
+  background: linear-gradient(258.04deg, #8583FF -11.99%, #F406EB 139.01%);
+  border: 0;
+  border-radius: 38px;
+  width: 100px;
+  height: 30px;
+  color: white;
+  display: block;
+  margin-top: auto;
+}
+.nav-item{
+  margin: 0px 10px 0px 10px;
+}
+
+.partic-yellow-bg {
+  background: #FFB743;
+}
+.partic-yellow-t{
+  color: #FFB743;
+}
+.partic-grey-bg {
+  background: #A6A6A6;
+}
+.partic-grey-t{
+  color: #A6A6A6;
+}
+.partic-blue-bg {
+  background: #6267BF;
+}
+.partic-blue-t{
+  color: #6267BF;
+}
+.partic-yellow-bg,.partic-grey-bg,.partic-blue-bg{
+  color: white;
+}
+.partic-btn{
+  border-radius: 38px;
+}
