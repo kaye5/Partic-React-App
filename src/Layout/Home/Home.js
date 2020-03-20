@@ -27,13 +27,16 @@ export default  class Home extends React.Component{
             temp[ev.target.name]  = ev.target.value;
         this.setState(temp);
     }
-    renderEventBtn(price,status){
+    handleBtnClick(id){
+        window.location.href = `/events/${id}`
+    }
+    renderEventBtn(price,status,id){
         if(status === 'SOLD')
         return(<button className="btn partic-btn partic-grey-bg ev-bt" disabled>Sold</button>)
         if(parseInt(price) === 0)
-            return(<button className="btn partic-btn partic-yellow-bg ev-bt">Free</button>)
+            return(<button className="btn partic-btn partic-yellow-bg ev-bt" onClick={()=>this.handleBtnClick(id)}>Free</button>)
         else 
-            return(<button className="btn partic-btn partic-blue-bg ev-bt">Buy</button>)
+            return(<button className="btn partic-btn partic-blue-bg ev-bt" onClick={()=>this.handleBtnClick(id)}>Buy</button>)
     }
     render(){
         return(
@@ -79,8 +82,8 @@ export default  class Home extends React.Component{
                             this.state.events.map(event=>(
                                 <div className="col-12 col-sm-6 col-md-4 col-lg-3 my-3" key={event.id}>
                                     <div className="card ev-card" style={{width:"100%"}}>
-                                        <img src={event.img} className="ev-img" alt={event.id}/>
-                                        {this.renderEventBtn(event.price,event.status)}
+                                        <a href={`/events/${event.id}`}><img src={event.img} className="ev-img" alt={event.id}/></a>
+                                        {this.renderEventBtn(event.price,event.status,event.id)}
                                         <div className="card-body pt-0">
                                             <span className="partic-yellow-t" style={{width : ".5rem"}}>{event.date}</span>
                                             <h5 className="card-title m-0"><b>{event.name}</b></h5>
@@ -101,7 +104,7 @@ export default  class Home extends React.Component{
                         <div className="ml-5">
                             <p><b>Subsribe newletter for special promo and good offer.</b></p>
                             <input name="subscribe" placeholder="Input your email" className="sub-in mr-3"/>
-                            <button className="btn partic-btn partic-blue-bg p-2">Subsribe</button>
+                            <button className="btn partic-btn partic-blue-bg p-2">Subscribe</button>
                         </div>
                     </div>
                 </div>

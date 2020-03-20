@@ -6,7 +6,9 @@ export const eventData =  [
         "price" : "0",
         "status": "OPEN",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "2",
@@ -15,7 +17,9 @@ export const eventData =  [
         "price" : "10000",
         "status ": "SOLD",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "3",
@@ -24,7 +28,9 @@ export const eventData =  [
         "price" : "0",
         "status": "OPEN",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "4",
@@ -33,7 +39,9 @@ export const eventData =  [
         "price" : "100000",
         "status": "SOLD",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "5",
@@ -42,7 +50,9 @@ export const eventData =  [
         "price" : "0",
         "status": "OPEN",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "6",
@@ -51,7 +61,9 @@ export const eventData =  [
         "price" : "10000",
         "status ": "SOLD",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "7",
@@ -60,7 +72,9 @@ export const eventData =  [
         "price" : "0",
         "status": "OPEN",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     },
     {
         "id" : "8",
@@ -69,7 +83,9 @@ export const eventData =  [
         "price" : "100000",
         "status": "SOLD",
         "location" : "UPH MEDAN CAMPUS",
-        "date" : "3 March 2020"
+        "date" : "3 March 2020",
+        "hostName" : "Partic",
+        "hostUsername" : "@ParticINC."
     }
 ]
 
