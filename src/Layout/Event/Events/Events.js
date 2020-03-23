@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Events.css'
 import {eventData}from '../../../dataTest/event.js'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 export default class Events extends React.Component{
     constructor(props){
         super(props)
@@ -9,10 +9,14 @@ export default class Events extends React.Component{
             events : [],
             query : false,
             categories : 'Categories',
-            loc : ['Medan','Jakarta','Bandung','Surabaya']
+            loc : ['Medan','Jakarta','Bandung','Surabaya'],
+            link : false
         }
         this.handleChange  = this.handleChange.bind(this)
         
+    }
+    handleLocation(link){
+        this.setState({link})
     }
     componentDidMount(){
         let query = new URLSearchParams(window.location.search)
@@ -40,6 +44,9 @@ export default class Events extends React.Component{
     render(){
         return(
             <React.Fragment>
+                {
+                    this.state.link && <Redirect to={window.location.pathname+`?collection=${this.state.link}`} />
+                }
                 <div className="cont-search p-3">
                     <div className="row">
                         <div className="col-12 col-md-3 " style={{textAlign:"center"}}>
@@ -64,20 +71,16 @@ export default class Events extends React.Component{
                     </div>
                     <div className="row">
                         {
-                            this.state.loc.map(data=>(
-                                <React.Fragment>
+                            this.state.loc.map((data,index)=>(
+                                <React.Fragment key={index}>
                                     {
                                         this.state.loc.indexOf(data)%2 === 0 ? 
                                         <div className="coll-btn" key={data} >
-                                        <Link to={window.location.pathname+`?collection=${data}`} style={{width:"100%"}}>
-                                        <button className="btn partic-btn partic-yellow-bg" style={{width:"100%"}}>{data}</button>
-                                        </Link>
+                                        <button className="btn partic-btn partic-yellow-bg" style={{width:"100%"}} onClick={()=>this.handleLocation(data)}>{data}</button>
                                         </div>
                                         : 
                                         <div className="coll-btn">
-                                        <Link to={window.location.pathname+`?collection=${data}`} style={{width:"100%"}}>
-                                        <button className="btn partic-btn partic-blue-bg" style={{width:"100%"}}>{data}</button>
-                                        </Link>
+                                        <button className="btn partic-btn partic-blue-bg" style={{width:"100%"}} onClick={()=>this.handleLocation(data)}>{data}</button>
                                         </div>
                                     }
                                 </React.Fragment>                                

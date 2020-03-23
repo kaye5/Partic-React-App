@@ -2,6 +2,7 @@ import React from 'react';
 import {eventData} from '../../../dataTest/event'
 import {commentData} from '../../../dataTest/comment'
 import './Detail.css'
+import Checkout from '../Checkout/Checkout';
 export default  class Detail extends React.Component{
     constructor(props){
         super(props)
@@ -99,7 +100,7 @@ export default  class Detail extends React.Component{
                             <h3><b>{event.name}</b></h3>
                             <p><i className="fa fa-map-marker mr-2"/>{event.location}</p>
                             <p><i className="fa fa-clock-o mr-2" />{event.date}</p>
-                            <button className="btn partic-btn partic-blue-bg" style={{width:"50%"}}>Order</button>
+                            <Checkout event={this.state.event}/>
                         </div>
                     </div>
                 </div>
