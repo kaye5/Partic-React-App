@@ -42,18 +42,18 @@ export default  class Home extends React.Component{
         return(
             <div>
                 <div className="cont-head row">
-                    <div className="col-sm-12 col-md-12 col-lg-6 mb-3">
+                    <div className="col-sm-12 col-md-12 col-lg-5 mb-3 home-txt">
                         <div className="row">
-                            <h1>Dimanapun Partynya Disni Ticketnya.</h1>
+                            <h1 className="font-weight-bold m-0">Dimanapun Partynya Disni Ticketnya.</h1>
                         </div>
                         <div className="row partic-yellow-t">
                             <p className="main-q">#Partyforlife</p>
                         </div>
-                        <div className="row partic-yellow-t">
-                            <Link to="/events"><button className="btn partic-yellow-bg partic-btn">Discover More</button></Link>
+                        <div className="row partic-yellow-t mt-1">
+                            <Link to="/events"><button className="btn partic-yellow-bg partic-btn py-3 px-5">Discover More</button></Link>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-md-12 col-lg-6">
+                    <div className="col-sm-12 col-md-12 col-lg-7">
                         <img src={mainPic} alt="main" width="100%"/>
                     </div>
                 </div>

@@ -53,3 +53,12 @@
 .cont-foot{
     margin: 5rem 0 0 0;
 }
+.home-txt {
+    padding-top: 5rem;
+}
+@media (max-width : 1024px){
+    .home-txt {
+        padding-top: 1rem;
+    }
+}
+

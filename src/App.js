@@ -16,7 +16,7 @@ function App() {
       <Navbar />
         
           <ScrollToTop />
-          <div className="container" style={{paddingBottom:"30rem",marginTop:"3rem"}}>
+          <div className="container-fluid app-container">
           <MainRoute />  
           </div>
 
