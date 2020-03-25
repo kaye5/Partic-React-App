@@ -14,7 +14,7 @@
     text-transform: uppercase;
 }
 .create-img  {
-    text-align : center;
+    margin: auto;
     width: 300px;
 }
 .img {
@@ -34,4 +34,10 @@
 }
 .create-img:hover .create-img-text{
     opacity: 1;
+}
+
+@media (max-width : 480px){
+    .create-img {
+        width : 200px
+    }
 }

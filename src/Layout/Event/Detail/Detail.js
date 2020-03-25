@@ -107,7 +107,7 @@ export default  class Detail extends React.Component{
                 <div className="row cont-search p-3 my-5">
                     <div>
                     <button className="btn detail-act-btn" id='fav-btn' onClick={(ev)=>this.favClick(ev)}><i className='fa fa-heart mr-2'/> 99</button>
-                    <button className="btn detail-act-btn">Comments</button>
+                    <a href='#comments'><button className="btn detail-act-btn">Comments</button></a>
                     </div>
                     <div className="det-cont-btn">
                     <button className="btn detail-act-btn"><i className="fa fa-phone partic-yellow-t"/></button>
@@ -125,7 +125,7 @@ export default  class Detail extends React.Component{
                         Phasellus tincidunt leo elit. Quisque auctor lacinia diam, a tincidunt magna faucibus euismod. Aenean laoreet accumsan iaculis. Mauris non ex dignissim, lacinia tortor vitae, condimentum velit. Integer non finibus nunc. Proin odio turpis, efficitur nec dictum vel, tincidunt ut lectus. In at diam accumsan, ullamcorper mi ut, tincidunt elit. In egestas eros augue, non consequat mi facilisis sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                     </div>
                 </div>
-                <div className="detail-comment my-5 ">
+                <div className="detail-comment my-5" id='comments'>
                     <h4><b>Comments</b></h4>
                     <div>
                         {this.renderComment()}

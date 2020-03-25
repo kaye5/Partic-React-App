@@ -1,6 +1,8 @@
 import React from 'react'
 import {eventData} from '../../../dataTest/event' 
 import { Link } from 'react-router-dom'
+import {commentData} from '../../../dataTest/comment'
+import Modal from "@material-ui/core/Modal";
 export default class Manage extends React.Component{
     constructor(props){
         super(props)
@@ -9,12 +11,16 @@ export default class Manage extends React.Component{
             event : {
 
             },
-            fav : ''
+            fav : '',
+            comment : [],
+            commentCount : 3,
+            modalContact : false,
+            edit : false,
         }
     }
     componentDidMount(){
         let idx = parseInt(this.props.match.params.id)
-        this.setState({event : eventData[idx-1]});
+        this.setState({event : eventData[idx-1],comment: commentData});
     }
     handleClick(event){
         this.setState({currency : event.target.id});
@@ -34,21 +40,66 @@ export default class Manage extends React.Component{
             likeBtn.classList.add('text-danger')
         }
     }
+    likeClick(i){
+        let temp = this.state.comment;        
+        if(temp[i].like)
+            temp[i].like = false
+        else 
+            temp[i].like= true
+        this.setState({comment : temp})
+    }
+    isLike(like){
+        if(like)
+            return 'fa fa-heart mr-2 text-danger'
+        else 
+            return 'fa fa-heart mr-2'
+    }
+    handleShowMore(){
+        let temp = this.state.commentCount;
+        this.setState({commentCount : temp+3})
+    }
+    renderComment(){
+        var comment = this.state.comment
+        if(comment.length === 0)
+            return 1
+        var element = []
+        for(let i = 0 ; i < this.state.commentCount;i++){         
+            if(i>= comment.length)   
+                break;
+            element.push(
+                <div className="cont-search" key={i}>
+                    <div className="row">
+                        <div className="col-12 col-lg-8">
+                            <h6><b>{comment[i].name}</b></h6>
+                            <p className="text-justify">{comment[i].message}</p>
+                        </div>
+                        <div className="col-12 col-lg-4">
+                            <div className="row float-right">
+                                <button onClick={()=>this.likeClick(i)} className="btn detail-act-btn"><i className={this.isLike(comment[i].like)} />99</button>
+                                <button className="btn detail-act-btn">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        return element
+    }
     render(){
     return (
         <React.Fragment>
             <div className="row">
-                <div className="col-12 col-md-6 mb-5">
+                <div className="col-12 col-md-6 mb-5 p-0">
                     <div className="row" style={{justifyContent:"center"}}>
                         <div className="create-img">
-                        <img src={this.state.event.img} alt="post" height="405px" width="100%" className="img"/>
+                        <img src={this.state.event.img} alt="post" height="400px" width="100%" className="img"/>
                         <button className="btn partic-btn partic-yellow-bg create-img-text">Edit picture</button>
                         </div>
                     </div>
                     <div className="row" style={{justifyContent:"center"}}>
                         <div className="cont-search text-center">
                             <button className={"btn detail-act-btn "+this.state.fav} id="fav-btn"  onClick={(e)=>this.handleFav(e)}><i class="fa fa-heart mr-2"></i> 99</button>
-                            <button className="btn detail-act-btn">Comments</button>
+                            <a href="#comments"><button className="btn detail-act-btn">Comments</button></a>
                         </div>
                     </div>
                     <div className="row mt-5" style={{justifyContent:"center"}}>
@@ -119,15 +170,63 @@ export default class Manage extends React.Component{
                                 <input type="date" name="closeRegis" required className="partic-date-picker"/>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
+                    </form>
                     <div className="my-3 flex-wrap">
-                        <button className="btn partic-btn partic-yellow-bg py-2 px-5 m-3">Contact Info</button>
+                        <button className="btn partic-btn partic-yellow-bg py-2 px-5 m-3" onClick={()=>this.setState({modalContact : true})}>Contact Info</button>
                         <button className="btn partic-btn partic-yellow-bg py-2 px-5 m-3">Send Email</button>
                         <button className="btn partic-btn partic-yellow-bg py-2 px-5 m-3">Edit Event</button>
                     </div>
-                    </form>
                 </div>                
             </div>
+            <div className="detail-comment my-5" id="comments">
+                <h4><b>Comments</b></h4>
+                <div>
+                    {this.renderComment()}
+                </div>
+                {
+                    this.state.commentCount < this.state.comment.length &&
+                    <div className="detail-show">
+                        <p onClick={()=>this.handleShowMore()}>Show more <i className="fa fa-chevron-down"/></p>
+                    </div>
+                }                    
+            </div>
+            <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.state.modalContact}
+            onClose={()=>this.setState({modalContact : false})}
+            >
+            <div
+                className="modal-dialog"
+                role="document"
+                style={{ textAlign: "center" ,top:"15%"}}
+            >
+                <div className="modal-content">
+                    <div className="modal-body">
+                        <h2>Contact Info</h2>
+                        {
+                            this.state.edit ? 
+                            <React.Fragment>
+                                <button className="btn detail-act-btn"><i className="fa fa-phone partic-yellow-t"/></button>
+                                <input name='phone' type='tel' className='form-control'/><br/>
+                                <button className="btn detail-act-btn"><i className="fa fa-envelope  partic-yellow-t"/></button>
+                                <input name='email' type='email' className='form-control'/>
+                                <br/>
+                                <button className="btn detail-act-btn" onClick={()=>this.setState({edit : false})}>Save</button>
+                            </React.Fragment>
+                            :
+                            <React.Fragment>
+                                <button className="btn detail-act-btn"><i className="fa fa-phone partic-yellow-t"/></button>
+                                <span className='profile-edit' onClick={()=>this.setState({edit : true})}>083194617930 <i className='fa fa-edit ml-2'/></span><br/>
+                                <button className="btn detail-act-btn"><i className="fa fa-envelope  partic-yellow-t"/></button>
+                                <span className='profile-edit' onClick={()=>this.setState({edit : true})}>partic@partic.com <i className='fa fa-edit ml-2'/></span>
+                            </React.Fragment>
+                        }
+                    </div>
+                </div>
+            </div>
+            </Modal>
         </React.Fragment>
     )}
 }

@@ -81,7 +81,7 @@ export default class Login extends Component {
                       <label className="form-check-label">Remmember password</label>
                     </div>
                     <div className="col-6 text-right">
-                      <a href="/forgot"><span><u>Forgot password?</u></span></a>
+                      <a href="/forgot" style={{color : "black"}}><span><u>Forgot password?</u></span></a>
                     </div>
                   </div>
                   <div style={{textAlign:"center"}} className="my-4">
@@ -90,7 +90,7 @@ export default class Login extends Component {
                     </button>
                   </div>
                 </form>
-                <small className="text-muted">Not a user? <a><u>Sign up here</u></a></small>
+                <small className="text-muted">Not a user? <a href='/register' style={{color : "black"}}><u>Sign up here</u></a></small>
               </div>
             </div>
           </div>

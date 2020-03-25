@@ -81,7 +81,7 @@ export default function Create(){
                 </div>
                 <div className="col-12 col-md-6">
                     <div className="create-img">
-                    <img src="https://via.placeholder.com/1080x1350" alt="post" height="405px" className="img"/>
+                    <img src="https://via.placeholder.com/1080x1350" alt="post" width="100%"className="img"/>
                     <p className="create-img-text">Edit picture</p>
                     </div>                    
                 </div>

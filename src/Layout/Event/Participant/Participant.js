@@ -34,7 +34,7 @@ export default function Participant(){
     }
     return (
         <React.Fragment>
-            <div className="row">
+            <div className="row my-3">
                 <h2><b>Participant</b></h2>
             </div>
             <div className="row">
@@ -51,6 +51,9 @@ export default function Participant(){
                         {renderParticipant()}
                     </tbody>
                 </table>
+            </div>
+            <div className="row float-right my-3">
+                <button className="btn partic-btn partic-blue-bg py-2 px-5">Convert to .Xls</button>
             </div>
         </React.Fragment>
     )

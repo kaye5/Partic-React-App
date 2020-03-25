@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
+}
 .App{
   position: relative;
   min-height: 100vh;
@@ -14,15 +20,22 @@ a{
   margin-left: 0;
   margin-right: 0;
 }
+.navbar-brand {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0;
+  margin-left: 15rem;
+}
 .post-btn{
   background: linear-gradient(258.04deg, #8583FF -11.99%, #F406EB 139.01%);
   border: 0;
   border-radius: 38px;
-  width: 100px;
-  height: 30px;
   color: white;
   display: block;
-  margin-top: auto;
+  padding : .3rem 1rem;
+}
+.navbar-nav {
+  place-items: center;
 }
 .nav-item{
   margin: 0px 10px 0px 10px;
@@ -57,17 +70,26 @@ a{
     padding-left: 10rem;
     padding-right: 10rem;
   }
+  .navbar-brand {
+    margin-left: 10rem;
+  }
 }
 @media (max-width : 1336px){
   .app-container {
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  .navbar-brand {
+    margin-left: 5rem;
+  }
 }
 @media (max-width : 1024px){
   .app-container {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .navbar-brand {
+    margin-left: 3rem;
   }
 }
 @media (max-width : 768px){
@@ -80,6 +102,9 @@ a{
   .app-container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .navbar-brand {
+    margin-left: 0;
   }
 }
 @media (max-width : 480px){

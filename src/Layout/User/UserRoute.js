@@ -5,15 +5,16 @@ import {
 import {
     Switch,
     Route,
+    BrowserRouter as Router,
     withRouter,
 } from "react-router-dom";
 function UserRoute(){
     return(
         <Switch>
-            <Route exact path="/profile">
+            <Router>
                 <Profile />
-            </Route>
-            <Route path="/profile/ticket">
+            </Router>
+            <Route exact path="/profile/ticket">
                 <Ticket />
             </Route>
         </Switch>

@@ -43,7 +43,7 @@ export default function Checkout(props){
                                 </div>
                             </div>
                             <div className="my-3 p-3 text-right">
-                                <button className="btn partic-btn partic-yellow-bg p-3">Check out</button>
+                                <a href={`/events/${event.id}/payment`}><button className="btn partic-btn partic-yellow-bg p-3">Check out</button></a>
                             </div>
                             <div className="divider-checkout mb-5" />
                             

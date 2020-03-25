@@ -39,10 +39,10 @@ export default class NavBar extends React.Component {
         else 
         return(
             <React.Fragment>
-                <a className="dropdown-item" href="/profile">Account Setting</a>
+                <a className="dropdown-item" href="/profile/setting">Account Setting</a>
                 <a className="dropdown-item" href="/profile/ticket">Ticket</a>
                 <a className="dropdown-item" href="/profile/event/ticket">Create Event</a>
-                <a className="dropdown-item" href="/profile/event/manage">My Events </a>
+                <a className="dropdown-item" href="/events/my">My Events </a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="/logout" style={{color : "red"}}>Logout</a>
             </React.Fragment>
@@ -52,7 +52,7 @@ export default class NavBar extends React.Component {
         return(
             <header className="shadow p-2 mb-3 bg-white rounded">                
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <a className="navbar-brand" href="/" style={{fontWeight :"bolder",fontSize:"1.5rem"}}>Partic.</a>
+                    <a className="navbar-brand" href="/">Partic.</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa fa-bars"></i>
                     </button>
@@ -67,8 +67,8 @@ export default class NavBar extends React.Component {
                         <li className={this.isLinkActive('/events')}>
                             <a className="nav-link" href="/events">Discover Event</a>
                         </li>
-                        <li className={this.isLinkActive('/profile/event/create')}>
-                            <a className="nav-link" href="/profile/event/create"><button className="post-btn">Post Event</button></a>
+                        <li className={this.isLinkActive('/events/create')}>
+                            <a className="nav-link" href="/events/create"><button className="post-btn">Post Event</button></a>
                         </li>
                         <li className="nav-item dropdown dropleft">
                             <span className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
