@@ -3,7 +3,8 @@ import Auth from '../Modules/Auth';
 import { Link } from 'react-router-dom';
 export default class NavBar extends React.Component {
     state = {
-        login : false
+        login : false,
+        profileClass : '',
     }
     componentDidMount(){
         if(Auth.isUserAuthenticated()){
@@ -11,7 +12,12 @@ export default class NavBar extends React.Component {
         } else 
         this.setState({login : false})
     }
-    
+    handleOpenProfile(){
+        if(this.state.profileClass === 'show')
+            this.setState({profileClass : ''})
+        else 
+            this.setState({profileClass : 'show'})
+    }
     isLinkActive(path){
         if(window.location.pathname === path)
             return "nav-item active"
@@ -70,11 +76,11 @@ export default class NavBar extends React.Component {
                         <li className={this.isLinkActive('/events/create')}>
                             <a className="nav-link" href="/events/create"><button className="post-btn">Post Event</button></a>
                         </li>
-                        <li className="nav-item dropdown dropleft">
-                            <span className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li className="nav-item dropdown dropleft" onClick={()=>this.handleOpenProfile()}>
+                            <span className="nav-link dropdown-toggle">
                             <i className="fa fa-user-circle" style={{color : "black",fontSize:"1.5rem"}}></i>
                             </span>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown" >
+                            <div className={"dropdown-menu "+this.state.profileClass} aria-labelledby="navbarDropdown" >
                                 {this.renderIsLogin()}
                             </div>
                         </li>

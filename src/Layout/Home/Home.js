@@ -104,7 +104,7 @@ export default  class Home extends React.Component{
                         <div className="ml-5">
                             <p><b>Subsribe newletter for special promo and good offer.</b></p>
                             <input name="subscribe" placeholder="Input your email" className="sub-in mr-3"/>
-                            <button className="btn partic-btn partic-blue-bg p-2">Subscribe</button>
+                            <button className="btn partic-btn partic-blue-bg p-2 mt-3">Subscribe</button>
                         </div>
                     </div>
                 </div>
