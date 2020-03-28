@@ -41,6 +41,7 @@ export default class Login extends Component {
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
+          disableScrollLock={false}
           open={this.state.modal}
           onClose={this.toggle}
         >
