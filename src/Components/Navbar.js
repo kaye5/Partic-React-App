@@ -1,22 +1,9 @@
 import React from 'react';
-import Auth from '../Modules/Auth';
-import { Link } from 'react-router-dom';
+import Profile from './Profile'
 export default class NavBar extends React.Component {
     state = {
         login : false,
-        profileClass : '',
-    }
-    componentDidMount(){
-        if(Auth.isUserAuthenticated()){
-            this.setState({login : true})
-        } else 
-        this.setState({login : false})
-    }
-    handleOpenProfile(){
-        if(this.state.profileClass === 'show')
-            this.setState({profileClass : ''})
-        else 
-            this.setState({profileClass : 'show'})
+        open : false,
     }
     isLinkActive(path){
         if(window.location.pathname === path)
@@ -24,36 +11,7 @@ export default class NavBar extends React.Component {
         else 
             return "new-item"
     }
-    renderIsLogin(){
-        if(!this.state.login)
-        return (
-            <React.Fragment>
-                <Link to={{
-                    pathname : '/login',
-                    state : {
-                        prev : window.location.pathname,
-                    }}
-                }><span className="dropdown-item">Login</span></Link>
-                <Link to={{
-                    pathname : '/signup',
-                    state : {
-                        prev : window.location.pathname
-                    }}
-                }><span className="dropdown-item">Sign up</span></Link>
-            </React.Fragment>
-        )
-        else 
-        return(
-            <React.Fragment>
-                <a className="dropdown-item" href="/profile/setting">Account Setting</a>
-                <a className="dropdown-item" href="/profile/ticket">Ticket</a>
-                <a className="dropdown-item" href="/profile/event/ticket">Create Event</a>
-                <a className="dropdown-item" href="/events/my">My Events </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="/logout" style={{color : "red"}}>Logout</a>
-            </React.Fragment>
-        )
-    }
+    
     render(){
         return(
             <header className="shadow p-2 mb-3 bg-white rounded">                
@@ -76,13 +34,8 @@ export default class NavBar extends React.Component {
                         <li className={this.isLinkActive('/events/create')}>
                             <a className="nav-link" href="/events/create"><button className="post-btn">Post Event</button></a>
                         </li>
-                        <li className="nav-item dropdown dropleft" onClick={()=>this.handleOpenProfile()}>
-                            <span className="nav-link dropdown-toggle">
-                            <i className="fa fa-user-circle" style={{color : "black",fontSize:"1.5rem"}}></i>
-                            </span>
-                            <div className={"dropdown-menu "+this.state.profileClass} aria-labelledby="navbarDropdown" >
-                                {this.renderIsLogin()}
-                            </div>
+                        <li className="nav-item">
+                            <Profile />                                                        
                         </li>
                         </ul>
                     </div>

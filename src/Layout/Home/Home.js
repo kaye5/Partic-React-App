@@ -4,6 +4,7 @@ import secPic from '../../Asset/img/homebot.png'
 import './Home.css'
 import {eventData}from '../../dataTest/event.js'
 import { Link } from 'react-router-dom';
+
 export default  class Home extends React.Component{
     constructor(props){
         super(props)
