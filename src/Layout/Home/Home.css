@@ -56,9 +56,18 @@
 .home-txt {
     padding-top: 5rem;
 }
+.contact-info {
+    padding-top: 10rem;
+    text-align: center;
+}
 @media (max-width : 1024px){
     .home-txt {
         padding-top: 1rem;
     }
 }
-
+@media(max-width : 768px){
+    .contact-info {
+        padding-top: 0;
+        text-align: left;
+    }
+}

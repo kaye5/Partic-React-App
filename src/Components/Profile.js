@@ -64,7 +64,7 @@ export default function Profile() {
                     }}
                 }><span className="dropdown-item">Login</span></Link>
                 <Link to={{
-                    pathname : '/signup',
+                    pathname : '/register',
                     state : {
                         prev : window.location.pathname
                     }}
