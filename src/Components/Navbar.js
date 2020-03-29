@@ -16,7 +16,7 @@ export default class NavBar extends React.Component {
         return(
             <header className="shadow p-2 mb-3 bg-white rounded">                
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <a className="navbar-brand" href="/">Partic.</a>
+                    <a className="navbar-brand" href="/" style={{fontFamily : 'Montserrat-Black'}}>Partic.</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa fa-bars"></i>
                     </button>

@@ -71,7 +71,7 @@ export default function Profile() {
           <a className="dropdown-item" href="/profile/ticket">
             Ticket
           </a>
-          <a className="dropdown-item" href="/profile/event/ticket">
+          <a className="dropdown-item" href="/events/create">
             Create Event
           </a>
           <a className="dropdown-item" href="/events/my">

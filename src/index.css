@@ -8,6 +8,10 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+@font-face {
+  font-family: 'Montserrat-Black';
+  src : url('./Asset/font/Montserrat-Black.ttf')
+}
 
 * {
   font-family: 'Montserrat', sans-serif;

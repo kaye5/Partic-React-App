@@ -11,12 +11,10 @@ import {
 function UserRoute(){
     return(
         <Switch>
-            <Router>
+            <Route exact path="/profile/ticket" component={()=> <Ticket />} />
+            <Router>                
                 <Profile />
             </Router>
-            <Route exact path="/profile/ticket">
-                <Ticket />
-            </Route>
         </Switch>
     )
 }
