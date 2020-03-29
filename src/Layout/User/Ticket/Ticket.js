@@ -57,7 +57,7 @@ export default  class Ticket extends React.Component{
                             <div className="collapse py-4" id={"collapseExample"+data.id}>  
                                 <div className="row">
                                     <div className="col-12 col-md-3">
-                                        <img src={photo} width="100%" style={{borderRadius : "10px"}}/>
+                                        <img src={photo} width="100%" style={{borderRadius : "10px"}} alt={data.id}/>
                                     </div>
                                     <div className="col-12 col-md-6" style={{fontSize : "1.2rem"}}>
                                         <div className="row tic-t"><i className="fa fa-map-marker"/>&nbsp;&nbsp;&nbsp;{data.location}</div>

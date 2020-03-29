@@ -25,6 +25,13 @@ export default class Events extends React.Component{
             query : query.get('collection')
         })
     }
+    componentWillUpdate(){
+        let query = new URLSearchParams(window.location.search)
+        if(this.state.query !== query.get('collection'))
+            this.setState({
+                query : query.get('collection')
+            })
+    }
     handleChange(ev){
         let temp = this.state;
         if(ev.target.label)
@@ -52,12 +59,15 @@ export default class Events extends React.Component{
                         <div className="col-12 col-md-3 " style={{textAlign:"center"}}>
                             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.state.categories}</button>
                             <div className="dropdown-menu">
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Party" onMouseDown={this.handleChange}>Party</option>
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Music" onMouseDown={this.handleChange}>Music</option>
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Show" onMouseDown={this.handleChange}>Show</option>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6"><input name="search" placeholder="search" value={this.state.search} onChange={this.handleChange} className="inpt form-control"/>
+                        <div className="col-12 col-md-6 my-3"><input name="search" placeholder="search" value={this.state.search} onChange={this.handleChange} className="inpt form-control"/>
                         </div>
                         <div className="col-4 col-md-3 my-2">
                             <button className="btn partic-btn partic-blue-bg pl-4 pr-4" >Search</button>

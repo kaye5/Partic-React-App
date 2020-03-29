@@ -31,8 +31,8 @@ export default function Create(){
                                         {currency}
                                     </button>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" onClick={(ev)=>handleClick(ev)} id="IDR">IDR</a>
-                                        <a className="dropdown-item" onClick={(ev)=>handleClick(ev)} id="USD">USD</a>
+                                        <span className="dropdown-item" onClick={(ev)=>handleClick(ev)} id="IDR">IDR</span>
+                                        <span className="dropdown-item" onClick={(ev)=>handleClick(ev)} id="USD">USD</span>
                                     </div>
                                 </div>
                             </div>

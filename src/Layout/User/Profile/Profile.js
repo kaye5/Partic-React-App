@@ -10,7 +10,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Switch, Route } from 'react-router-dom';
 import {Setting,Close,Password} from './Components'
 import './Profile.css'
-import { Link } from '@material-ui/core';
 const useStyles = makeStyles({
   list: {
     width: 250,

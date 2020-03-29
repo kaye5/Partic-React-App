@@ -125,8 +125,8 @@ export default class Manage extends React.Component{
                                         {this.state.currency}
                                     </button>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" onClick={(ev)=>this.handleClick(ev)} id="IDR">IDR</a>
-                                        <a className="dropdown-item" onClick={(ev)=>this.handleClick(ev)} id="USD">USD</a>
+                                        <span className="dropdown-item" onClick={(ev)=>this.handleClick(ev)} id="IDR">IDR</span>
+                                        <span className="dropdown-item" onClick={(ev)=>this.handleClick(ev)} id="USD">USD</span>
                                     </div>
                                 </div>
                             </div>

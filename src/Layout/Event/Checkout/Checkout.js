@@ -4,6 +4,7 @@ import './Checkout.css'
 export default function Checkout(props){
     const [event,setEvent] = useState({})
     const [modal,setModal] = useState(false)
+    // eslint-disable-next-line 
     React.useEffect(()=>{
         setEvent(props.event)
     })

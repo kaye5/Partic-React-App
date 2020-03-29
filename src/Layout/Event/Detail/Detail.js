@@ -14,12 +14,14 @@ export default  class Detail extends React.Component{
             commentCount : 3,
         }
     }
+    
     componentDidMount(){
         try{
             let idx = parseInt(this.props.match.params.id);
             if(eventData[idx-1])
                 this.setState({event : eventData[idx-1],comment : commentData})
             else 
+                // eslint-disable-next-line
                 throw 'error'
         } catch (err){
             this.setState({events : 'not found'})

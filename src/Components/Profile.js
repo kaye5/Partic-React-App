@@ -1,28 +1,13 @@
-import React from 'react';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import { makeStyles } from '@material-ui/core/styles';
-
-import Auth from '../Modules/Auth';
-import { Link } from 'react-router-dom';
-const useStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-    },
-    paper: {
-      marginRight: theme.spacing(2),
-    },
-  }));
+import React from "react";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import Auth from "../Modules/Auth";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-  const [login,setLogin] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+  const [login, setLogin] = React.useState(false);
   const handleToggle = () => {
     setOpen(prevOpen => !prevOpen);
   };
@@ -34,15 +19,14 @@ export default function Profile() {
 
     setOpen(false);
   };
-
-
-  React.useEffect(()=>{
-    if(Auth.isUserAuthenticated()){
-        setLogin(true)
-    } else 
-    setLogin(false)
-  },[Auth.isUserAuthenticated()])
   
+  React.useEffect(() => {
+    if (Auth.isUserAuthenticated()) {
+      setLogin(true);
+    } else setLogin(false);
+    // eslint-disable-next-line
+  }, [Auth.isUserAuthenticated()]);
+
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -52,52 +36,77 @@ export default function Profile() {
     prevOpen.current = open;
   }, [open]);
 
-
-  function renderIsLogin(){
-    if(!login)
-        return (
-            <React.Fragment>
-                <Link to={{
-                    pathname : '/login',
-                    state : {
-                        prev : window.location.pathname,
-                    }}
-                }><span className="dropdown-item">Login</span></Link>
-                <Link to={{
-                    pathname : '/register',
-                    state : {
-                        prev : window.location.pathname
-                    }}
-                }><span className="dropdown-item">Sign up</span></Link>
-            </React.Fragment>
-        )
-        else 
-        return(
-            <React.Fragment>
-                <a className="dropdown-item" href="/profile/setting">Account Setting</a>
-                <a className="dropdown-item" href="/profile/ticket">Ticket</a>
-                <a className="dropdown-item" href="/profile/event/ticket">Create Event</a>
-                <a className="dropdown-item" href="/events/my">My Events </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="/logout" style={{color : "red"}}>Logout</a>
-            </React.Fragment>
-        )
-    }
+  function renderIsLogin() {
+    if (!login)
+      return (
+        <React.Fragment>
+          <Link
+            to={{
+              pathname: "/login",
+              state: {
+                prev: window.location.pathname
+              }
+            }}
+          >
+            <span className="dropdown-item">Login</span>
+          </Link>
+          <Link
+            to={{
+              pathname: "/register",
+              state: {
+                prev: window.location.pathname
+              }
+            }}
+          >
+            <span className="dropdown-item">Sign up</span>
+          </Link>
+        </React.Fragment>
+      );
+    else
+      return (
+        <React.Fragment>
+          <a className="dropdown-item" href="/profile/setting">
+            Account Setting
+          </a>
+          <a className="dropdown-item" href="/profile/ticket">
+            Ticket
+          </a>
+          <a className="dropdown-item" href="/profile/event/ticket">
+            Create Event
+          </a>
+          <a className="dropdown-item" href="/events/my">
+            My Events{" "}
+          </a>
+          <div className="dropdown-divider"></div>
+          <a className="dropdown-item" href="/logout" style={{ color: "red" }}>
+            Logout
+          </a>
+        </React.Fragment>
+      );
+  }
   return (
     <div>
-        <span ref={anchorRef}
-          aria-controls={open ? 'menu-list-grow' : undefined}
-          aria-haspopup="true"
-          onClick={handleToggle}>
-            <i className="fa fa-user-circle" style={{color : "black",fontSize:"1.5rem"}}></i>
-        </span>
-        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal placement='left-end'>
-          
-            <Paper onClick={handleClose}> 
-                {renderIsLogin()}            
-            </Paper>
-        
-        </Popper>
+      <span
+        ref={anchorRef}
+        aria-controls={open ? "menu-list-grow" : undefined}
+        aria-haspopup="true"
+        onClick={handleToggle}
+      >
+        <i
+          className="fa fa-user-circle"
+          style={{ color: "black", fontSize: "1.5rem" }}
+        ></i>
+      </span>
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+        placement="left-end"
+      >
+        <Paper onClick={handleClose}>{renderIsLogin()}</Paper>
+      </Popper>
     </div>
   );
 }

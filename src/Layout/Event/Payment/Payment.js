@@ -61,8 +61,8 @@ export default function Payment(){
                             </div>                                
                         </div>
                         <div className="row">
-                            <small className='muted-text'>I accept the <a className="text-primary">terms of service</a> and have 
-                            <a className="text-primary"> read the privacy policy</a>. I agree that Partic may <a>share my information</a> with the event organizer.</small>
+                            <small className='muted-text'>I accept the <a className="text-primary" href='/'>terms of service</a> and have 
+                            <a className="text-primary" href='/'> read the privacy policy</a>. I agree that Partic may <a href='/'>share my information</a> with the event organizer.</small>
                         </div>
                         <div className='text-center mt-5'>
                         <button className="btn partic-btn partic-blue-bg px-5 py-2" onClick={()=>setPay(true)}>PAY</button>

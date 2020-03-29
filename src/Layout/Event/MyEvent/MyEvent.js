@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Events.css'
 import {eventData}from '../../../dataTest/event.js'
-import { Link, Redirect } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 export default class MyEvent extends React.Component{
     constructor(props){
         super(props)

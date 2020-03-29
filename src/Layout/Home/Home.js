@@ -39,6 +39,7 @@ export default  class Home extends React.Component{
         else 
             return(<button className="btn partic-btn partic-blue-bg ev-bt" onClick={()=>this.handleBtnClick(id)}>Buy</button>)
     }
+    
     render(){
         return(
             <div>
@@ -64,12 +65,15 @@ export default  class Home extends React.Component{
                         <div className="col-12 col-md-3 " style={{textAlign:"center"}}>
                             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.state.categories}</button>
                             <div className="dropdown-menu">
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Party" onMouseDown={this.handleChange}>Party</option>
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Music" onMouseDown={this.handleChange}>Music</option>
+                                {/* eslint-disable-next-line  */}
                                 <option className="dropdown-item" accessKey="categories" value="Show" onMouseDown={this.handleChange}>Show</option>
                             </div>
                         </div>
-                        <div className="col-8 col-md-6"><input name="search" placeholder="search" value={this.state.search} onChange={this.handleChange} className="inpt form-control"/>
+                        <div className="col-12 col-md-6 my-3"><input name="search" placeholder="search" value={this.state.search} onChange={this.handleChange} className="inpt form-control"/>
                         </div>
                         <div className="col-4 col-md-3">
                             <button className="btn partic-btn partic-blue-bg pl-4 pr-4" >Search</button>
