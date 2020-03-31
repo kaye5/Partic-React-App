@@ -100,7 +100,7 @@ export default  class Home extends React.Component{
                         }
                     </div>
                     <div className="row" style={{justifyContent :"center",marginTop:"4rem"}}>
-                        <button className="brn ev-s-btn"><b>SEE ALL EVENT &nbsp;&nbsp;&nbsp;<i className="fa fa-arrow-right"></i></b></button>
+                        <Link to="/events"><button className="brn ev-s-btn"><b>SEE ALL EVENT &nbsp;&nbsp;&nbsp;<i className="fa fa-arrow-right"></i></b></button></Link>
                     </div>
                 </div>
                 <div className="cont-foot row">
@@ -108,8 +108,8 @@ export default  class Home extends React.Component{
                     <div className="col-sm-12 col-md-6" style={{alignSelf:"center"}}>
                         <div className="ml-5">
                             <p><b>Subsribe newletter for special promo and good offer.</b></p>
-                            <input name="subscribe" placeholder="Input your email" className="sub-in mr-3"/>
-                            <button className="btn partic-btn partic-blue-bg p-2 mt-3">Subscribe</button>
+                            <input name="subscribe" placeholder="Input your email" className="sub-in mr-3 mb-3"/>
+                            <button className="btn partic-btn partic-blue-bg p-2">Subscribe</button>
                         </div>
                     </div>
                 </div>
