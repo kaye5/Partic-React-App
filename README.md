@@ -1,7 +1,7 @@
 ## PARTIC
 ### Get Ready for party?
 
-###For live demo go to [http://34.238.150.204/home](http://34.238.150.204/home)
+### For live demo go to [http://34.238.150.204/home](http://34.238.150.204/home)
 
 Check this link below . 
  - Project wiki (Guide,doc,etc) [https://github.com/kaye5/partic-tugas-akhir-web1/wiki](https://github.com/kaye5/partic-tugas-akhir-web1/wiki). 
