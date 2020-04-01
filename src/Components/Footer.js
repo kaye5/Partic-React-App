@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
                         <a href="/contact-us">About Us</a>
                     </div>
                     <div className="row mt-5 cpf partic-grey-t">
-                        Copyright 2020 Partic
+                        © Copyright 2020 Partic 
                     </div>
                 </div>
             </footer>

@@ -34,6 +34,10 @@ export default function Contact(){
                     <h4>Head office</h4>
                     <p>UPH Medan Campus</p>
                 </div>
+                <div className='mt-5'>
+                    <h5>Special thanks to website prototype designer</h5>
+                    <p><a href='https://www.instagram.com/kevinfericco/'><i className='fa fa-instagram mr-3' style={{fontSize:'2rem',color:'black'}}/></a> Kevin Fericco</p>
+                </div>
             </div>
         </div>
     )
