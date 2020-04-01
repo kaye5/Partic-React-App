@@ -9,7 +9,7 @@ export default class Events extends React.Component{
             events : [],
             query : false,
             categories : 'Categories',
-            loc : ['Medan','Jakarta','Bandung','Surabaya'],
+            loc : ['Medan','Jakarta','Bandung','Surabaya','Makasar','Yogyakarta'],
             link : false
         }
         this.handleChange  = this.handleChange.bind(this)
@@ -54,6 +54,26 @@ export default class Events extends React.Component{
                 {
                     this.state.link && <Redirect to={window.location.pathname+`?collection=${this.state.link}`} />
                 }
+                <div id="carouselExampleControls" className="carousel slide mb-5" data-ride="carousel">
+                    <div className="carousel-inner shadow" style={{maxHeight : "500px",borderRadius:"20px"}}>
+                        <div className="carousel-item active">
+                            <img className="d-block w-100" src="https://quotefancy.com/media/wallpaper/3840x2160/1784356-Audrey-Hepburn-Quote-Life-is-a-party-Dress-for-it.jpg" alt="First slide" height="500px"/>
+                        </div>
+                        <div className="carousel-item">
+                            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp2927194.jpg" alt="Second slide" height="500px"/>
+                        </div>
+                    </div>
+
+                    <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Next</span>
+                    </a>
+                    
+                </div>
                 <div className="cont-search p-3">
                     <div className="row">
                         <div className="col-12 col-md-3 " style={{textAlign:"center"}}>
@@ -79,7 +99,7 @@ export default class Events extends React.Component{
                         <h3><b>Collection</b></h3>
                         <span>Checkout event arround you.</span>                        
                     </div>
-                    <div className="row">
+                    <div className="coll-scroll">
                         {
                             this.state.loc.map((data,index)=>(
                                 <React.Fragment key={index}>
